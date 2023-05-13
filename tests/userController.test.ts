@@ -16,4 +16,13 @@ describe('User Controller', () => {
         const newUser = setUser({name, age, address});
         expect(newUser).toMatchObject({name, age, address});
     });
+    it('Should add a user', () => {
+        const user = setUser({name: "Test User", age: 30, address: "123 Test St"});
+        expect(user).toMatchObject({name: "Test User", age: 30, address: "123 Test St"});
+    });
+    // Test case to check if the getUser function returns undefined for a non-existent user
+    it('Should return undefined for a non-existent user', () => {
+        const nonExistentId = "non-existent-id";
+        expect(getUser({id: nonExistentId})).toBeUndefined();
+    });
 });
