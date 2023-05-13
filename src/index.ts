@@ -1,6 +1,5 @@
 import express from 'express';
-
-const graphqlHTTP = require('express-graphql');
+import {graphqlHTTP} from "express-graphql";
 import {schema, root} from './routes/userRoutes';
 
 const app = express();
