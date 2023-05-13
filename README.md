@@ -72,7 +72,7 @@ Angular client application.
    yarn test
    ```
 
-## Sample graphQL Queries
+## Sample GraphQL Queries
 example of a GraphQL mutation that could be used to create a new user with the setUser operation:
 
 ```
