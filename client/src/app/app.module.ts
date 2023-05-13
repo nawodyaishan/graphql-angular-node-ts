@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-
+import {GraphQLModule} from './graphql/graphql.module';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {UserComponent} from './user/user.component';
@@ -12,6 +12,7 @@ import {UserComponent} from './user/user.component';
   ],
   imports: [
     BrowserModule,
+    GraphQLModule,
     AppRoutingModule
   ],
   providers: [],
