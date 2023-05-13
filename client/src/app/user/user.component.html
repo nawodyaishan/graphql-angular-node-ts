@@ -1,1 +1,9 @@
-<p>user works!</p>
+<div *ngIf="users">
+  <h2>Users</h2>
+  <div *ngFor="let user of users">
+    <p>Name: {{ user.name }}</p>
+    <p>Age: {{ user.age }}</p>
+    <p>Address: {{ user.address }}</p>
+    <hr>
+  </div>
+</div>
