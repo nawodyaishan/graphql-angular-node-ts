@@ -73,96 +73,39 @@ Angular client application.
    ```
 
 ## Sample graphQL Queries
-
 example of a GraphQL mutation that could be used to create a new user with the setUser operation:
 
-```sql
-mutation
-SetUser(
-$name
-:
-String
-!,
-$age
-:
-Int
-!,
-$address
-:
-String
-!
-)
-{
-setUser
-(
-name
-:
-$name,
-age
-:
-$age,
-address
-:
-$address
-)
-{
-id
-name
-age
-address
-}
+```
+mutation SetUser($name: String!, $age: Int!, $address: String!) {
+  setUser(name: $name, age: $age, address: $address) {
+    id
+    name
+    age
+    address
+  }
 }
 
 {
-"name"
-:
-"Alice",
-"age"
-:
-30,
-"address"
-:
-"123 Main St."
+"name": "Alice",
+"age": 30,
+"address": "123 Main St."
 }
 ```
-
 example of a GraphQL query that could be used to fetch a user's information given their id:
 
-```sql
-query
-GetUser(
-$id
-:
-String
-!
-)
-{
-getUser
-(
-id
-:
-$id
-)
-{
-id
-name
-age
-#
-other
-fields
-you
-might
-want
-to
-fetch
-}
+```
+query GetUser($id: String!) {
+  getUser(id: $id) {
+    id
+    name
+    age
+    # other fields you might want to fetch
+  }
 }
 
 
 {
-"id"
-:
-"12345"
+"id": "12345"
 }
 ```
 
