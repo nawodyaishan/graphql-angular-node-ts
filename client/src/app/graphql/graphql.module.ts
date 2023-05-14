@@ -1,18 +1,16 @@
 import {NgModule} from '@angular/core';
-import {HttpClientModule} from '@angular/common/http';
-import {ApolloModule, APOLLO_OPTIONS} from 'apollo-angular';
+import {APOLLO_OPTIONS} from 'apollo-angular';
+import {ApolloClientOptions, InMemoryCache} from '@apollo/client/core';
 import {HttpLink} from 'apollo-angular/http';
-import {InMemoryCache, ApolloClientOptions} from '@apollo/client/core';
 
 export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
   return {
-    cache: new InMemoryCache(),
     link: httpLink.create({uri: 'http://localhost:4000/graphql'}),
+    cache: new InMemoryCache(),
   };
 }
 
 @NgModule({
-  exports: [ApolloModule, HttpClientModule],
   providers: [
     {
       provide: APOLLO_OPTIONS,
@@ -21,5 +19,6 @@ export function createApollo(httpLink: HttpLink): ApolloClientOptions<any> {
     },
   ],
 })
+
 export class GraphQLModule {
 }

@@ -1,9 +1,10 @@
-import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-import {GraphQLModule} from './graphql/graphql.module';
+import {NgModule} from '@angular/core';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {UserComponent} from './user/user.component';
+import {HttpClientModule} from '@angular/common/http';
+import {GraphQLModule} from './graphql/graphql.module';
 
 @NgModule({
   declarations: [
@@ -12,8 +13,9 @@ import {UserComponent} from './user/user.component';
   ],
   imports: [
     BrowserModule,
-    GraphQLModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    GraphQLModule
   ],
   providers: [],
   bootstrap: [AppComponent]
